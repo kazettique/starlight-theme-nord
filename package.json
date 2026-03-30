@@ -1,0 +1,19 @@
+{
+  "name": "starlight-theme-nord-monorepo",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Nord Theme For Starlight",
+  "author": "kazettique",
+  "type": "module",
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "private": true,
+  "homepage": "https://github.com/kazettique/starlight-theme-nord",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazettique/starlight-theme-nord.git"
+  },
+  "bugs": "https://github.com/kazettique/starlight-theme-nord/issues"
+}
