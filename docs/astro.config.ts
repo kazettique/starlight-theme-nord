@@ -19,9 +19,7 @@ export default defineConfig({
       social: [{ href: "https://github.com/kazettique/starlight-theme-nord", icon: "github", label: "GitHub" }],
       title: "starlight-theme-nord",
       customCss: ["./src/styles/custom.css"],
-      expressiveCode: {
-        themes: ["github-dark", "github-light"],
-      },
+      favicon: "./src/assets/favicon/favicon-32x32.png",
     }),
   ],
 });
