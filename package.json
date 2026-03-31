@@ -15,5 +15,10 @@
     "type": "git",
     "url": "https://github.com/kazettique/starlight-theme-nord.git"
   },
-  "bugs": "https://github.com/kazettique/starlight-theme-nord/issues"
+  "bugs": "https://github.com/kazettique/starlight-theme-nord/issues",
+  "scripts": {
+    "release:patch": "pnpm run scripts/release.js patch",
+    "release:minor": "pnpm run scripts/release.js minor",
+    "release:major": "pnpm run scripts/release.js major"
+  }
 }

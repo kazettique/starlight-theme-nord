@@ -3,6 +3,8 @@ import { defineConfig } from "astro/config";
 import starlightThemeNord from "starlight-theme-nord";
 
 export default defineConfig({
+  site: 'https://kazettique.github.io',
+  base: '/starlight-theme-nord',
   integrations: [
     starlight({
       editLink: {
