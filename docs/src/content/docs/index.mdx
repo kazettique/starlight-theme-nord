@@ -20,10 +20,10 @@ hero:
     file: ../../assets/nord.png
   actions:
     - text: Get Started
-      link: /getting-started/
+      link: ./getting-started/
       icon: right-arrow
     - text: Examples
-      link: /examples/kitchen-sink/
+      link: ./examples/kitchen-sink/
       icon: right-arrow
       variant: minimal
 ---
@@ -34,15 +34,15 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
 
 <CardGrid stagger>
   <Card title="Install the theme" icon="puzzle">
-    Check the [getting started guide](/getting-started/) for installation instructions.
+    Check the [getting started guide](./getting-started/) for installation instructions.
   </Card>
   <Card title="Configure the theme" icon="setting">
     Edit your config in the `astro.config.mjs` file.
   </Card>
   <Card title="Preview the theme" icon="seti:image">
-    Check out the [example pages](/examples/kitchen-sink/) to see the theme in action.
+    Check out the [example pages](./examples/kitchen-sink/) to see the theme in action.
   </Card>
   <Card title="Read the docs" icon="open-book">
-    Learn more in the [`starlight-theme-nord` documentation](/getting-started/).
+    Learn more in the [`starlight-theme-nord` documentation](./getting-started/).
   </Card>
 </CardGrid>
