@@ -8,57 +8,236 @@
 @layer starlight, nord;
 
 /**
- * Scope the theme styles to its own layer so that user styles can override them easily.
+ * Nord Theme for Starlight
  *
- * This is where any custom CSS related to the theme should go and the current content is only
- * provided for demonstration and documentation purposes.
- *
- * Feel free to remove it and add your own customizations.
+ * A comprehensive arctic, north-bluish theme based on the Nord color palette.
+ * @see https://www.nordtheme.com/docs/colors-and-palettes
  */
 @layer nord {
   :root,
   ::backdrop {
-    /**
-     * Override some CSS custom properties used by Starlight for the dark theme.
-     *
-     * @see https://github.com/withastro/starlight/blob/main/packages/starlight/style/props.css
-     */
-    --sl-color-accent-low: #002b27;
-    --sl-color-accent: #007a72;
-    --sl-color-accent-high: #8cdad0;
+    /* ============================================
+     * Nord Color Palette
+     * ============================================ */
+
+    /* Polar Night — dark base colors */
+    --polar-night-1: #2e3440;
+    --polar-night-2: #3b4252;
+    --polar-night-3: #434c5e;
+    --polar-night-4: #4c566a;
+
+    /* Snow Storm — light colors */
+    --snow-storm-1: #d8dee9;
+    --snow-storm-2: #e5e9f0;
+    --snow-storm-3: #eceff4;
+
+    /* Frost — cool blue accents */
+    --frost-1: #8fbcbb;
+    --frost-2: #88c0d0;
+    --frost-3: #81a1c1;
+    --frost-4: #5e81ac;
+
+    /* Aurora — warm accent colors */
+    --aurora-1: #bf616a;
+    --aurora-2: #d08770;
+    --aurora-3: #ebcb8b;
+    --aurora-4: #a3be8c;
+    --aurora-5: #b48ead;
+
+    /* ============================================
+     * Dark Theme (default)
+     * ============================================ */
+
+    /* Accent colors */
+    --sl-color-accent-low: #3b4f6b;
+    --sl-color-accent: var(--frost-2);
+    --sl-color-accent-high: var(--frost-3);
+
+    /* Gray scale */
     --sl-color-white: #ffffff;
-    --sl-color-gray-1: #ffe6ec;
-    --sl-color-gray-2: #edadbf;
-    --sl-color-gray-3: #d45d86;
-    --sl-color-gray-4: #982353;
-    --sl-color-gray-5: #6b0034;
-    --sl-color-gray-6: #4d0024;
-    --sl-color-black: #320316;
+    --sl-color-gray-1: var(--snow-storm-3);
+    --sl-color-gray-2: var(--snow-storm-2);
+    --sl-color-gray-3: var(--snow-storm-1);
+    --sl-color-gray-4: var(--polar-night-4);
+    --sl-color-gray-5: var(--polar-night-3);
+    --sl-color-gray-6: var(--polar-night-2);
+    --sl-color-gray-7: #333a47;
+    --sl-color-black: var(--polar-night-1);
+
+    /* Semantic colors — Red (danger) */
+    --sl-color-red-low: #3d2a2e;
+    --sl-color-red: var(--aurora-1);
+    --sl-color-red-high: #d9969c;
+
+    /* Semantic colors — Orange (caution) */
+    --sl-color-orange-low: #3d3029;
+    --sl-color-orange: var(--aurora-2);
+    --sl-color-orange-high: #e0ad9e;
+
+    /* Semantic colors — Green (success) */
+    --sl-color-green-low: #2f3528;
+    --sl-color-green: var(--aurora-4);
+    --sl-color-green-high: #c5d6b4;
+
+    /* Semantic colors — Blue (note) */
+    --sl-color-blue-low: #2e3a4d;
+    --sl-color-blue: var(--frost-3);
+    --sl-color-blue-high: #a8c1d8;
+
+    /* Semantic colors — Purple (tip) */
+    --sl-color-purple-low: #382e3a;
+    --sl-color-purple: var(--aurora-5);
+    --sl-color-purple-high: #cdb3c7;
+
+    /* Background colors */
+    --sl-color-bg: var(--polar-night-1);
+    --sl-color-bg-nav: var(--polar-night-2);
+    --sl-color-bg-sidebar: var(--polar-night-2);
+    --sl-color-bg-inline-code: var(--polar-night-3);
+    --sl-color-bg-accent: var(--frost-2);
+
+    /* Text colors */
+    --sl-color-text: var(--snow-storm-1);
+    --sl-color-text-accent: var(--frost-2);
+    --sl-color-text-invert: var(--polar-night-1);
+
+    /* Border/hairline colors */
+    --sl-color-hairline-light: var(--polar-night-3);
+    --sl-color-hairline: var(--polar-night-4);
+    --sl-color-hairline-shade: var(--polar-night-2);
+    --sl-color-backdrop-overlay: hsla(220, 17%, 20%, 0.66);
+
+    /* Banner */
+    --sl-color-banner-text: var(--snow-storm-3);
+
+    /* Shadows — Nord-tinted (hue 220) */
+    --sl-shadow-sm: 0px 1px 1px hsla(220, 17%, 7%, 0.15),
+      0px 2px 1px hsla(220, 17%, 7%, 0.28);
+    --sl-shadow-md: 0px 8px 4px hsla(220, 17%, 7%, 0.1),
+      0px 5px 2px hsla(220, 17%, 7%, 0.1),
+      0px 3px 2px hsla(220, 17%, 7%, 0.14),
+      0px 1px 1px hsla(220, 17%, 7%, 0.18);
+    --sl-shadow-lg: 0px 25px 7px hsla(220, 17%, 7%, 0.04),
+      0px 16px 6px hsla(220, 17%, 7%, 0.12),
+      0px 9px 5px hsla(220, 17%, 7%, 0.36),
+      0px 4px 4px hsla(220, 17%, 7%, 0.8),
+      0px 4px 2px hsla(220, 17%, 7%, 0.28);
   }
 
-  :root[data-theme='light'],
-  [data-theme='light'] ::backdrop {
-    /**
-     * Override some CSS custom properties used by Starlight for the light theme.
-     */
-    --sl-color-accent-low: #abe4dc;
-    --sl-color-accent: #007169;
-    --sl-color-accent-high: #003b36;
-    --sl-color-white: #320316;
-    --sl-color-gray-1: #4d0024;
-    --sl-color-gray-2: #6b0034;
-    --sl-color-gray-3: #982353;
-    --sl-color-gray-4: #d45d86;
-    --sl-color-gray-5: #edadbf;
-    --sl-color-gray-6: #ffe6ec;
-    --sl-color-gray-7: #fff3f6;
+  :root[data-theme="light"],
+  [data-theme="light"] ::backdrop {
+    /* ============================================
+     * Light Theme
+     * ============================================ */
+
+    /* Accent colors */
+    --sl-color-accent-low: #d8e6f0;
+    --sl-color-accent: var(--frost-4);
+    --sl-color-accent-high: #3b5b82;
+
+    /* Gray scale (inverted) */
+    --sl-color-white: var(--polar-night-1);
+    --sl-color-gray-1: var(--polar-night-2);
+    --sl-color-gray-2: var(--polar-night-3);
+    --sl-color-gray-3: var(--polar-night-4);
+    --sl-color-gray-4: var(--snow-storm-1);
+    --sl-color-gray-5: var(--snow-storm-2);
+    --sl-color-gray-6: var(--snow-storm-3);
+    --sl-color-gray-7: #f2f4f8;
     --sl-color-black: #ffffff;
+
+    /* Semantic colors — Red (danger) */
+    --sl-color-red-low: #f0d4d6;
+    --sl-color-red: #b04b55;
+    --sl-color-red-high: #80333b;
+
+    /* Semantic colors — Orange (caution) */
+    --sl-color-orange-low: #f2ddd5;
+    --sl-color-orange: #c4755e;
+    --sl-color-orange-high: #8a4f3c;
+
+    /* Semantic colors — Green (success) */
+    --sl-color-green-low: #ddebd2;
+    --sl-color-green: #7da06c;
+    --sl-color-green-high: #526b45;
+
+    /* Semantic colors — Blue (note) */
+    --sl-color-blue-low: #d4e2f0;
+    --sl-color-blue: var(--frost-4);
+    --sl-color-blue-high: #3b5b82;
+
+    /* Semantic colors — Purple (tip) */
+    --sl-color-purple-low: #e9d8e5;
+    --sl-color-purple: #9c7494;
+    --sl-color-purple-high: #6e4e67;
+
+    /* Background colors */
+    --sl-color-bg: #ffffff;
+    --sl-color-bg-nav: #f2f4f8;
+    --sl-color-bg-sidebar: #ffffff;
+    --sl-color-bg-inline-code: var(--snow-storm-2);
+    --sl-color-bg-accent: var(--frost-4);
+
+    /* Text colors */
+    --sl-color-text: var(--polar-night-3);
+    --sl-color-text-accent: var(--frost-4);
+    --sl-color-text-invert: #ffffff;
+
+    /* Border/hairline colors */
+    --sl-color-hairline-light: var(--snow-storm-2);
+    --sl-color-hairline: var(--snow-storm-1);
+    --sl-color-hairline-shade: var(--snow-storm-1);
+    --sl-color-backdrop-overlay: hsla(220, 17%, 50%, 0.4);
+
+    /* Banner */
+    --sl-color-banner-text: #ffffff;
+
+    /* Shadows — lighter for light mode */
+    --sl-shadow-sm: 0px 1px 1px hsla(220, 17%, 20%, 0.08),
+      0px 2px 1px hsla(220, 17%, 20%, 0.08);
+    --sl-shadow-md: 0px 8px 4px hsla(220, 17%, 20%, 0.04),
+      0px 5px 2px hsla(220, 17%, 20%, 0.04),
+      0px 3px 2px hsla(220, 17%, 20%, 0.08),
+      0px 1px 1px hsla(220, 17%, 20%, 0.08);
+    --sl-shadow-lg: 0px 25px 7px hsla(220, 17%, 20%, 0.01),
+      0px 16px 6px hsla(220, 17%, 20%, 0.04),
+      0px 9px 5px hsla(220, 17%, 20%, 0.1),
+      0px 4px 4px hsla(220, 17%, 20%, 0.2),
+      0px 4px 2px hsla(220, 17%, 20%, 0.06);
   }
 
-  /**
-   * Add rounded corners to cards.
-   */
+  /* ============================================
+   * Component Styling
+   * ============================================ */
+
+  /* Cards */
   .card {
     border-radius: 0.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    border-color: var(--frost-2);
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  /* Link cards */
+  .sl-link-card {
+    border-radius: 0.75rem;
+  }
+
+  /* Asides/callouts */
+  .starlight-aside {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  /* Inline code */
+  .sl-markdown-content :not(a) > code:not(:where(.not-content *)) {
+    border-radius: 0.25rem;
+  }
+
+  /* File tree */
+  starlight-file-tree {
+    border-radius: 0.5rem;
   }
 }

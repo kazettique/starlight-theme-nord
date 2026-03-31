@@ -1,4 +1,4 @@
-# `starlight-theme-nord` 🔱
+# `starlight-theme-nord`
 
 Nord Theme For Starlight
 

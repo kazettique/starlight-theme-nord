@@ -1,30 +1,32 @@
 import type { StarlightPlugin } from '@astrojs/starlight/types'
+import nordLight from './nord-light-theme'
 
 export default function starlightThemeNord(): StarlightPlugin {
   return {
     name: 'starlight-theme-nord',
     hooks: {
       'config:setup'({ config, logger, updateConfig }) {
-        /**
-         * This is the entry point of your Starlight plugin.
-         * The `config:setup` hook is called when Starlight is initialized (during the Astro `astro:config:setup`
-         * integration hook).
-         * To learn more about the Starlight plugin API and all available options in this hook, check the Starlight
-         * plugins reference.
-         *
-         * @see https://starlight.astro.build/reference/plugins/
-         */
         logger.info('Hello from the starlight-theme-nord plugin!')
 
-        /**
-         * Update the provided Starlight user configuration by appending the theme CSS file to the `customCss` array.
-         * To start customizing your theme, edit the `packages/starlight-theme-nord/styles.css` file.
-         *
-         * @see https://starlight.astro.build/reference/plugins/#updateconfig
-         * @see https://starlight.astro.build/reference/configuration/#customcss
-         */
+        // Respect user's choice to disable Expressive Code
+        if (config.expressiveCode === false) {
+          updateConfig({
+            customCss: [...(config.customCss ?? []), 'starlight-theme-nord/styles'],
+          })
+          return
+        }
+
+        // Merge with any existing expressiveCode config
+        const userEc = typeof config.expressiveCode === 'object' ? config.expressiveCode : {}
+
         updateConfig({
           customCss: [...(config.customCss ?? []), 'starlight-theme-nord/styles'],
+          expressiveCode: {
+            ...userEc,
+            // Only set themes if user hasn't provided their own
+            themes: userEc.themes ?? ['nord', nordLight],
+            useStarlightUiThemeColors: userEc.useStarlightUiThemeColors ?? true,
+          },
         })
       },
     },
