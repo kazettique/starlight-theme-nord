@@ -1,3 +1,9 @@
 .hero img {
   border-radius: 50%;
 }
+
+.site-title {
+  img {
+    border-radius: 50%;
+  }
+}
