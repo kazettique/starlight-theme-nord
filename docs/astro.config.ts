@@ -22,6 +22,9 @@ export default defineConfig({
       title: "starlight-theme-nord",
       customCss: ["./src/styles/custom.css"],
       favicon: "./src/assets/favicon/favicon-32x32.png",
+      logo: {
+        src: "./src/assets/nord.png",
+      },
     }),
   ],
 });
