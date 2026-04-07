@@ -1,6 +1,6 @@
 {
   "name": "starlight-theme-nord-monorepo",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "description": "Nord Theme For Starlight",
   "author": "kazettique",
@@ -20,5 +20,8 @@
     "release:patch": "pnpm run scripts/release.js patch",
     "release:minor": "pnpm run scripts/release.js minor",
     "release:major": "pnpm run scripts/release.js major"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.30.0"
   }
 }
