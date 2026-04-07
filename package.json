@@ -20,5 +20,8 @@
     "release:patch": "pnpm run scripts/release.js patch",
     "release:minor": "pnpm run scripts/release.js minor",
     "release:major": "pnpm run scripts/release.js major"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.30.0"
   }
 }
