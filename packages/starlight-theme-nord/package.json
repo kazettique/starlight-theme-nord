@@ -10,7 +10,7 @@
     "./styles": "./styles.css"
   },
   "devDependencies": {
-    "@astrojs/starlight": "0.38.2",
+    "@astrojs/starlight": "0.38.3",
     "astro": "6.1.4"
   },
   "peerDependencies": {
