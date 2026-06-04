@@ -16,7 +16,10 @@ export default defineConfig({
           label: "Start Here",
           items: ["getting-started", "customization"],
         },
-        { label: "Examples", autogenerate: { directory: "examples" } },
+        {
+          label: "Examples",
+          items: [{ autogenerate: { directory: "examples" } }],
+        },
       ],
       social: [{ href: "https://github.com/kazettique/starlight-theme-nord", icon: "github", label: "GitHub" }],
       title: "starlight-theme-nord",
